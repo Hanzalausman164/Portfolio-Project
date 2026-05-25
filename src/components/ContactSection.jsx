@@ -87,36 +87,36 @@ export const ContactSection = () => {
   };
 
   const inputClass =
-    "w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-foreground/30 text-sm focus:outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/15 transition-all duration-200";
+    "w-full px-3 md:px-4 py-2 md:py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-foreground/30 text-xs md:text-sm focus:outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/15 transition-all duration-200";
 
   return (
     <section
       id="contact"
       ref={sectionRef}
-      className="py-28 px-4 relative bg-card/20"
+      className="py-20 md:py-28 px-4 relative bg-card/20"
     >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(139,92,246,0.05)_0%,transparent_65%)] pointer-events-none" />
 
       <div className="container relative z-10">
         {/* Header */}
         <div
-          className={`text-center mb-20 transition-all duration-700 ${
+          className={`text-center mb-12 md:mb-20 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="text-primary font-semibold tracking-[0.2em] text-sm uppercase">
+          <span className="text-primary font-semibold tracking-[0.2em] text-xs md:text-sm uppercase">
             Get In Touch
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-3">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-3">
             Contact <span className="text-primary text-glow">Me</span>
           </h2>
-          <p className="mt-4 text-foreground/50 max-w-md mx-auto text-sm">
+          <p className="mt-4 text-foreground/50 max-w-md mx-auto text-xs sm:text-sm">
             Have a project in mind or just want to say hello? My inbox is always
             open.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-start">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-8 max-w-4xl mx-auto items-start">
           {/* Left – Info Card */}
           <div
             className={`transition-all duration-700 delay-200 ${
@@ -125,12 +125,12 @@ export const ContactSection = () => {
                 : "opacity-0 -translate-x-10"
             }`}
           >
-            <div className="rounded-2xl border border-border bg-card p-8 h-full flex flex-col gap-8">
+            <div className="rounded-2xl border border-border bg-card p-4 sm:p-6 md:p-8 h-full flex flex-col gap-4 md:gap-8">
               <div>
-                <h3 className="text-xl font-bold text-foreground mb-3">
+                <h3 className="text-lg md:text-xl font-bold text-foreground mb-2 md:mb-3">
                   Let&apos;s work together
                 </h3>
-                <p className="text-foreground/60 text-sm leading-relaxed">
+                <p className="text-foreground/60 text-xs md:text-sm leading-relaxed">
                   I&apos;m currently open to freelance opportunities and
                   full-time roles. Whether you have a question or just want to
                   say hi — I&apos;ll try my best to get back to you!
@@ -140,16 +140,16 @@ export const ContactSection = () => {
               {/* Email */}
               <a
                 href="mailto:muhammadhanzala164@gmail.com"
-                className="flex items-center gap-3 group"
+                className="flex items-center gap-2 md:gap-3 group"
               >
-                <div className="p-3 rounded-xl border border-border bg-background text-primary group-hover:bg-primary/10 group-hover:border-primary/40 transition-all duration-200">
-                  <Mail className="h-5 w-5" />
+                <div className="p-2 md:p-3 rounded-xl border border-border bg-background text-primary group-hover:bg-primary/10 group-hover:border-primary/40 transition-all duration-200 flex-shrink-0">
+                  <Mail className="h-4 md:h-5 w-4 md:w-5" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs text-foreground/40 font-medium uppercase tracking-wider">
                     Email
                   </p>
-                  <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                  <p className="text-xs md:text-sm font-semibold text-foreground group-hover:text-primary transition-colors truncate">
                     muhammadhanzala164@gmail.com
                   </p>
                 </div>
@@ -157,10 +157,10 @@ export const ContactSection = () => {
 
               {/* Social Links */}
               <div>
-                <p className="text-xs text-foreground/40 font-semibold uppercase tracking-[0.15em] mb-4">
+                <p className="text-xs text-foreground/40 font-semibold uppercase tracking-[0.15em] mb-3 md:mb-4">
                   Find me on
                 </p>
-                <div className="flex gap-3">
+                <div className="flex gap-2 md:gap-3">
                   {socialLinks.map(({ icon: Icon, label, href, hoverClass }) => (
                     <a
                       key={label}
@@ -169,11 +169,11 @@ export const ContactSection = () => {
                       rel="noopener noreferrer"
                       aria-label={label}
                       className={cn(
-                        "p-3 rounded-xl border border-border text-foreground/40 bg-background transition-all duration-200 hover:-translate-y-1",
+                        "p-2 md:p-3 rounded-xl border border-border text-foreground/40 bg-background transition-all duration-200 hover:-translate-y-1",
                         hoverClass
                       )}
                     >
-                      <Icon className="h-5 w-5" />
+                      <Icon className="h-4 md:h-5 w-4 md:w-5" />
                     </a>
                   ))}
                 </div>
@@ -192,12 +192,12 @@ export const ContactSection = () => {
             <form
               ref={formRef}
               onSubmit={handleSubmit}
-              className="rounded-2xl border border-border bg-card p-8 flex flex-col gap-5"
+              className="rounded-2xl border border-border bg-card p-4 sm:p-6 md:p-8 flex flex-col gap-4 md:gap-5"
             >
               <div className="flex flex-col gap-1.5">
                 <label
                   htmlFor="contact-name"
-                  className="text-sm font-medium text-foreground/70"
+                  className="text-xs md:text-sm font-medium text-foreground/70"
                 >
                   Your Name
                 </label>
@@ -216,7 +216,7 @@ export const ContactSection = () => {
               <div className="flex flex-col gap-1.5">
                 <label
                   htmlFor="contact-email"
-                  className="text-sm font-medium text-foreground/70"
+                  className="text-xs md:text-sm font-medium text-foreground/70"
                 >
                   Email Address
                 </label>
@@ -235,7 +235,7 @@ export const ContactSection = () => {
               <div className="flex flex-col gap-1.5">
                 <label
                   htmlFor="contact-message"
-                  className="text-sm font-medium text-foreground/70"
+                  className="text-xs md:text-sm font-medium text-foreground/70"
                 >
                   Message
                 </label>
@@ -255,7 +255,7 @@ export const ContactSection = () => {
                 type="submit"
                 disabled={status === "sending" || status === "sent"}
                 className={cn(
-                  "flex items-center justify-center gap-2 w-full py-3 rounded-full font-semibold text-sm transition-all duration-300",
+                  "flex items-center justify-center gap-2 w-full py-2 md:py-3 rounded-full font-semibold text-xs md:text-sm transition-all duration-300",
                   status === "sent"
                     ? "bg-green-500/20 text-green-400 border border-green-500/40 cursor-default"
                     : status === "error"
@@ -267,7 +267,7 @@ export const ContactSection = () => {
               >
                 {status === "idle" && (
                   <>
-                    <Send className="h-4 w-4" />
+                    <Send className="h-3 md:h-4 w-3 md:w-4" />
                     Send Message
                   </>
                 )}

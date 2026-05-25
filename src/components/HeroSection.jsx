@@ -43,8 +43,8 @@ export const HeroSection = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background glow orbs */}
-      <div className="absolute top-1/3 left-1/4 w-80 h-80 rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/4 w-56 h-56 md:w-80 md:h-80 rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/3 right-1/4 w-64 h-64 md:w-96 md:h-96 rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
 
       <div className="container relative z-10 flex flex-col items-center text-center gap-8 pt-24 pb-16">
         {/* Availability badge */}

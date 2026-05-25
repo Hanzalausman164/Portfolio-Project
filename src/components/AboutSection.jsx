@@ -52,7 +52,7 @@ export const AboutSection = () => {
                 : "opacity-0 -translate-x-10"
             }`}
           >
-            <div className="relative w-72 h-72 md:w-80 md:h-80">
+            <div className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80">
               {/* Outer spinning ring */}
               <div className="absolute inset-0 rounded-full border border-primary/20 animate-[spin_20s_linear_infinite]">
                 <div className="absolute -top-1 left-1/2 w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(139,92,246,0.8)]" />
@@ -66,13 +66,13 @@ export const AboutSection = () => {
                 <span className="text-6xl select-none">🧑‍💻</span>
               </div>
               {/* Floating badges */}
-              <div className="absolute -top-2 -right-4 bg-card border border-border rounded-xl px-3 py-1.5 text-xs font-semibold text-primary shadow-md animate-float">
+              <div className="hidden md:block absolute -top-2 -right-4 bg-card border border-border rounded-xl px-3 py-1.5 text-xs font-semibold text-primary shadow-md animate-float">
                 React ⚛️
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-card border border-border rounded-xl px-3 py-1.5 text-xs font-semibold text-primary shadow-md animate-float [animation-delay:1.5s]">
+              <div className="hidden md:block absolute -bottom-4 -left-4 bg-card border border-border rounded-xl px-3 py-1.5 text-xs font-semibold text-primary shadow-md animate-float [animation-delay:1.5s]">
                 Node.js 🟢
               </div>
-              <div className="absolute top-1/2 -right-8 bg-card border border-border rounded-xl px-3 py-1.5 text-xs font-semibold text-primary shadow-md animate-float [animation-delay:3s]">
+              <div className="hidden md:block absolute top-1/2 -right-8 bg-card border border-border rounded-xl px-3 py-1.5 text-xs font-semibold text-primary shadow-md animate-float [animation-delay:3s]">
                 Figma 🎨
               </div>
 
