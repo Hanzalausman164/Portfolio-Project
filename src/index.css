@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-border: hsl(var(--border));
   --color-background: hsl(var(--background));
@@ -159,4 +161,36 @@
   margin: 0 auto;
   padding: 0;
   text-align: center;
+}
+
+/* Typewriter blinking cursor */
+.typewriter-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.15em;
+  background-color: hsl(var(--primary));
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  border-radius: 1px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.7);
 }
