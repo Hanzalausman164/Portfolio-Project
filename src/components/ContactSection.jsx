@@ -52,7 +52,7 @@ export const ContactSection = () => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("sending");
 
@@ -70,20 +70,26 @@ export const ContactSection = () => {
       return;
     }
 
-    emailjs
-      .sendForm(serviceId, templateId, formRef.current, publicKey)
-      .then(
-        () => {
-          setStatus("sent");
-          setForm({ name: "", email: "", message: "" });
-          setTimeout(() => setStatus("idle"), 4000);
-        },
-        (error) => {
-          console.error("EmailJS Error:", error);
-          setStatus("error");
-          setTimeout(() => setStatus("idle"), 4000);
-        }
-      );
+    try {
+      const formElement = formRef.current;
+      if (formElement) {
+        await emailjs.sendForm(serviceId, templateId, formElement, publicKey);
+      } else {
+        await emailjs.send(serviceId, templateId, {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+        }, publicKey);
+      }
+
+      setStatus("sent");
+      setForm({ name: "", email: "", message: "" });
+      setTimeout(() => setStatus("idle"), 4000);
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 4000);
+    }
   };
 
   const inputClass =
